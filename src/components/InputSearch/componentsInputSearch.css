@@ -1,0 +1,29 @@
+.c-containerInputSearch {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.c-containerInputSearch input {
+  position: relative;
+  height: 2.7rem;
+  width: 80%;
+  border-radius: 30rem;
+  padding-left: 1rem;
+  border: none;
+}
+
+.c-containerInputSearch input::-webkit-search-cancel-button {
+  cursor: pointer;
+  position: relative;
+  right: 3rem;
+}
+
+.c-container__icon {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  position: absolute;
+  right: 30.5%;
+}

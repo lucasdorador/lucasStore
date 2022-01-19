@@ -1,0 +1,67 @@
+.c-containerHeader {
+  display: flex;
+  flex-direction: column;
+}
+
+.c-containerHeader__header {
+  display: flex;
+  flex: 1;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  max-height: 3rem;
+  font-size: 1.8rem;
+  color: white;
+  font-weight: 700;
+  background-color: var(--secundaryColorLight);
+}
+
+.c-containerHeader__headerSecundary {
+  display: flex;
+  background-color: var(--primaryColorLight);
+  height: 7rem;
+}
+
+.c-containerHeader__logo {
+  display: flex;
+  width: 25%;
+  justify-content: center;
+  /* align-items: center; */
+}
+
+.c-containerHeader__logo img {
+  position: absolute;
+  width: 11rem;
+  height: 10.5rem;
+  top: 0.4rem;
+  left: 1rem;
+}
+
+.c-containerHeader__inputSearch {
+  display: flex;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+}
+
+.c-containerHeader__login {
+  display: flex;
+  cursor: pointer;
+  width: 12.5%;
+  align-items: center;
+  justify-content: center;
+}
+
+.c-containerHeader__textLogin {
+  font-weight: 300;
+  margin-left: 0.8rem;
+  font-size: 1.6rem;
+}
+
+.c-containerHeader__cart {
+  display: flex;
+  width: 12.5%;
+
+  background: var(--primaryColor);
+  filter: grayscale(50%) brightness(110%);
+}

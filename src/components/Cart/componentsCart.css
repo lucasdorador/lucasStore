@@ -1,0 +1,25 @@
+.c-containerCart {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.c-containerCart svg {
+  margin-right: 1rem;
+}
+
+.c-displayValue {
+  display: flex;
+
+  border-radius: 3rem;
+  font-size: 2rem;
+  font-weight: 600;
+  color: white;
+  height: 3.7rem;
+  width: 9.9rem;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--primaryColorDark);
+}

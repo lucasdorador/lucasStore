@@ -1,3 +1,11 @@
+:root {
+  --primaryColor: #77b1a9;
+  --primaryColorLight: #b1e6d1;
+  --primaryColorDark: #3d7b80;
+  --secundaryColor: #270a33;
+  --secundaryColorLight: #451a3e;
+}
+
 html {
   font-size: 62.5%;
   font-family: "Poppins", sans-serif;
@@ -7,4 +15,9 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+p {
+  margin: 0;
+  padding: 0;
 }

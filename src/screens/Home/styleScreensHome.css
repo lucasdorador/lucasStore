@@ -1,0 +1,13 @@
+.m-containerHome {
+  display: flex;
+  min-width: 97vw;
+  min-height: 99vh;
+  flex-direction: column;
+}
+
+.m-gridProducts {
+  display: flex;
+  flex: 1;
+
+  border: 2px solid green;
+}
