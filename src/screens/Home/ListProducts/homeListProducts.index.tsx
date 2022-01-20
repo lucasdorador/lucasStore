@@ -5,13 +5,12 @@ import "./homeListProducts.css";
 import { products } from "./mockJson";
 
 const ListProducts: React.FC = () => {
-  console.log(products);
   return (
     <div className="m-containerListProducts">
       {products.map((prod: any) => (
         <div key={prod.id} className="m-containerListProducts__cardProduct">
           <div className="m-containerListProducts__image">
-            <LazyLoadImage src={prod.image} alt="errou" />
+            {/* <LazyLoadImage src={prod.image} alt="errou" /> */}
           </div>
           <div className="m-containerListProducts__namePrice">
             <p className="m-containerListProducts__name">{prod.name}</p>
