@@ -1,0 +1,88 @@
+.m-containerListProducts {
+  display: flex;
+  flex: 1;
+  flex-flow: row wrap;
+  justify-content: center;
+  border: 1px solid black;
+}
+
+.m-containerListProducts__cardProduct {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0.5rem 0.5rem;
+
+  width: 24rem;
+  height: 28rem;
+
+  border: 0.1rem solid rgba(0, 0, 0, 10%);
+}
+
+.m-containerListProducts__image {
+  display: flex;
+  margin-top: 1rem;
+  width: 22rem;
+  height: 13rem;
+
+  border: 1px solid blue;
+}
+
+.m-containerListProducts__namePrice {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.m-containerListProducts__name {
+  text-align: center;
+  max-height: 4rem;
+  width: 22rem;
+  font-size: 2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.m-containerListProducts__price {
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+
+.m-containerListProducts__price span {
+  font-size: 1.6rem;
+  font-weight: 300;
+}
+
+.m-containerListProducts__buttonBuy {
+  display: flex;
+  width: 100%;
+}
+
+.m-containerListProducts__buttonBuy button {
+  width: 100%;
+  cursor: pointer;
+  margin: 0 1rem 1rem 1rem;
+  height: 4.7rem;
+  border-radius: 3rem;
+  background: var(--secundaryColor);
+  border: none;
+}
+
+.m-containerListProducts__buttonIconText {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.m-containerListProducts__buttonBuy button p {
+  color: white;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.m-containerListProducts__buttonBuy button svg {
+  margin-right: 1rem;
+}

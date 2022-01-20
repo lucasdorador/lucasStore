@@ -1,6 +1,9 @@
 .c-containerHeader {
   display: flex;
   flex-direction: column;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
 }
 
 .c-containerHeader__header {
@@ -31,8 +34,8 @@
 
 .c-containerHeader__logo img {
   position: absolute;
-  width: 11rem;
-  height: 10.5rem;
+  width: 10rem;
+  height: 9.5rem;
   top: 0.4rem;
   left: 1rem;
 }

@@ -6,6 +6,19 @@
   --secundaryColorLight: #451a3e;
 }
 
+::-webkit-scrollbar-track {
+  background-color: var(--primaryColorLight);
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.2rem;
+  background: var(--primaryColorDark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primaryColorDark);
+}
+
 html {
   font-size: 62.5%;
   font-family: "Poppins", sans-serif;
