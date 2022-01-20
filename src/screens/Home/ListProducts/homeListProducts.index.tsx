@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useCallback } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import { IconCart } from "../../../components/Icons/Cart/iconCart";
+import ButtonBuy from "./ButtonBuy/listProductsButtonBuy.index";
 import "./homeListProducts.css";
+import { InterfaceListProducts } from "./homeListProducts.types";
 import { products } from "./mockJson";
 
 const ListProducts: React.FC = () => {
   return (
     <div className="m-containerListProducts">
-      {products.map((prod: any) => (
+      {products.map((prod: InterfaceListProducts) => (
         <div key={prod.id} className="m-containerListProducts__cardProduct">
           <div className="m-containerListProducts__image">
             {/* <LazyLoadImage src={prod.image} alt="errou" /> */}
@@ -19,14 +20,7 @@ const ListProducts: React.FC = () => {
               {prod.price}
             </p>
           </div>
-          <div className="m-containerListProducts__buttonBuy">
-            <button>
-              <div className="m-containerListProducts__buttonIconText">
-                <IconCart width="3.5rem" height="3.5rem" fill={"white"} />
-                <p>COMPRAR</p>
-              </div>
-            </button>
-          </div>
+          <ButtonBuy productSelected={prod} />
         </div>
       ))}
     </div>
