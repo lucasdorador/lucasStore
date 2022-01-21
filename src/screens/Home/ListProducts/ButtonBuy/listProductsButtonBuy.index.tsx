@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { IconAdd } from "../../../../components/Icons/Add/IconAdd";
 import { IconCart } from "../../../../components/Icons/Cart/iconCart";
 import { IconRemove } from "../../../../components/Icons/Remove/IconRemove";
-import { IconTrash } from "../../../../components/Icons/Trash/IconTrash";
+import { IconTrashWithBorder } from "../../../../components/Icons/Trash/IconTrashWithBorder";
 import {
   AddNewItemCart,
   AlterQuantityItemCart,
@@ -14,6 +14,10 @@ import "./listProductsButtonBuy.css";
 
 interface InterfaceButtonBuy {
   productSelected: InterfaceListProducts;
+  productInCart: {
+    isProductInCart: boolean;
+    quantityProduct: number;
+  };
 }
 
 const ButtonBuy: React.FC<InterfaceButtonBuy> = (props) => {
@@ -56,6 +60,13 @@ const ButtonBuy: React.FC<InterfaceButtonBuy> = (props) => {
     dispatch(AlterQuantityItemCart(props.productSelected.id, quantityLocal));
   }, [quantityLocal]);
 
+  useEffect(() => {
+    if (props.productInCart.isProductInCart) {
+      setButtonClicked(true);
+      setQuantityLocal(props.productInCart.quantityProduct);
+    }
+  }, []);
+
   return (
     <div className="m-containerListProducts__buttonBuy">
       {buttonClicked ? (
@@ -71,7 +82,11 @@ const ButtonBuy: React.FC<InterfaceButtonBuy> = (props) => {
                   functionRemoveItemCart();
                 }}
               >
-                <IconTrash width="3.5rem" height="3.5rem" fill={"white"} />
+                <IconTrashWithBorder
+                  width="3.5rem"
+                  height="3.5rem"
+                  fill={"white"}
+                />
               </div>
             )}
             <p>{quantityLocal} un</p>

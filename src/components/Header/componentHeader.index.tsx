@@ -4,8 +4,24 @@ import logoStore from "../../assets/logoStore.png";
 import InputSearch from "../InputSearch/componentsInputSearch.index";
 import { IconUser } from "../Icons/User/iconUser";
 import Cart from "../Cart/componentsCart.index";
+import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { InterfaceSelectorRedux } from "../../Store/reduxInterface.types";
 
 function Header() {
+  const navigate = useNavigate();
+  const _itemsCart = useSelector(
+    (state: InterfaceSelectorRedux) => state.shoppingCart.itemsCart
+  );
+
+  const functionGoToCart = () => {
+    if (_itemsCart.length > 0) {
+      navigate("/cart");
+    } else {
+      alert("Sem itens no carrinho");
+    }
+  };
+
   return (
     <div className="c-containerHeader">
       <header className="c-containerHeader__header">
@@ -13,7 +29,12 @@ function Header() {
       </header>
       <div className="c-containerHeader__headerSecundary">
         <div className="c-containerHeader__logo">
-          <LazyLoadImage src={logoStore} />
+          <LazyLoadImage
+            src={logoStore}
+            onClick={() => {
+              navigate("/");
+            }}
+          />
         </div>
         <div className="c-containerHeader__inputSearch">
           <InputSearch />
@@ -24,7 +45,7 @@ function Header() {
             Entre ou <b>{">"}</b> <p>cadastre-se</p>
           </div>
         </div>
-        <div className="c-containerHeader__cart">
+        <div className="c-containerHeader__cart" onClick={functionGoToCart}>
           <Cart />
         </div>
       </div>

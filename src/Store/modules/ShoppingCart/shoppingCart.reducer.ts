@@ -11,7 +11,6 @@ export const initialState: StateShoppingCart = {
 
 const calculateTotalCart = (itemCart: InterfaceItemsCart[]) => {
   let _totalCart = 0;
-  console.log(itemCart);
 
   if (itemCart && itemCart.length > 0) {
     for (let item of itemCart) {

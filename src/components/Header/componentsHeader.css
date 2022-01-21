@@ -29,7 +29,6 @@
   display: flex;
   width: 25%;
   justify-content: center;
-  /* align-items: center; */
 }
 
 .c-containerHeader__logo img {
@@ -38,6 +37,7 @@
   height: 9.5rem;
   top: 0.4rem;
   left: 1rem;
+  cursor: pointer;
 }
 
 .c-containerHeader__inputSearch {
@@ -64,6 +64,7 @@
 .c-containerHeader__cart {
   display: flex;
   width: 12.5%;
+  cursor: pointer;
 
   background: var(--primaryColor);
   filter: grayscale(50%) brightness(110%);
