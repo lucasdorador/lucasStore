@@ -12,8 +12,12 @@ const Cart: React.FC = () => {
 
   return (
     <div className="c-containerCart">
+      <div className="c-containerCart--text">Carrinho de compra</div>
       <IconCart width="4rem" height="4rem" />
-      <div className="c-displayValue">{maskValue(totalCart)}</div>
+      <div className="c-displayValue">
+        <span>R$&nbsp;</span>
+        {maskValue(totalCart)}
+      </div>
     </div>
   );
 };

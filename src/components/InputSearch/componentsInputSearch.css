@@ -8,7 +8,7 @@
 .c-containerInputSearch input {
   position: relative;
   height: 2.7rem;
-  width: 80%;
+  width: 90%;
   border-radius: 30rem;
   padding-left: 1rem;
   border: none;
@@ -18,12 +18,4 @@
   cursor: pointer;
   position: relative;
   right: 3rem;
-}
-
-.c-container__icon {
-  display: flex;
-  cursor: pointer;
-  align-items: center;
-  position: absolute;
-  right: 30.5%;
 }

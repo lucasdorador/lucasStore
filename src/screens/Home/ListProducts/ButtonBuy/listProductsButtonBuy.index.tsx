@@ -14,7 +14,7 @@ import "./listProductsButtonBuy.css";
 
 interface InterfaceButtonBuy {
   productSelected: InterfaceListProducts;
-  productInCart: {
+  productInCart?: {
     isProductInCart: boolean;
     quantityProduct: number;
   };
@@ -61,7 +61,7 @@ const ButtonBuy: React.FC<InterfaceButtonBuy> = (props) => {
   }, [quantityLocal]);
 
   useEffect(() => {
-    if (props.productInCart.isProductInCart) {
+    if (props.productInCart && props.productInCart.isProductInCart) {
       setButtonClicked(true);
       setQuantityLocal(props.productInCart.quantityProduct);
     }
@@ -73,11 +73,15 @@ const ButtonBuy: React.FC<InterfaceButtonBuy> = (props) => {
         <button className="m-containerListProducts__buttonIconText">
           <div className="m-containerListProducts__buttonIconText--spaceBetween">
             {quantityLargerOne ? (
-              <div onClick={functionDecrementQuantity}>
+              <div
+                style={{ display: "flex" }}
+                onClick={functionDecrementQuantity}
+              >
                 <IconRemove width="3.5rem" height="3.5rem" fill={"white"} />
               </div>
             ) : (
               <div
+                style={{ display: "flex" }}
                 onClick={() => {
                   functionRemoveItemCart();
                 }}
@@ -90,7 +94,10 @@ const ButtonBuy: React.FC<InterfaceButtonBuy> = (props) => {
               </div>
             )}
             <p>{quantityLocal} un</p>
-            <div onClick={functionIncrementQuantity}>
+            <div
+              style={{ display: "flex" }}
+              onClick={functionIncrementQuantity}
+            >
               <IconAdd width="3.5rem" height="3.5rem" fill={"white"} />
             </div>
           </div>
@@ -101,7 +108,10 @@ const ButtonBuy: React.FC<InterfaceButtonBuy> = (props) => {
             functionAddItemCart();
           }}
         >
-          <div className="m-containerListProducts__buttonIconText--center">
+          <div
+            style={{ display: "flex" }}
+            className="m-containerListProducts__buttonIconText--center"
+          >
             <IconCart width="3.5rem" height="3.5rem" fill={"white"} />
             <p className="m-containerListProducts__buttonText">COMPRAR</p>
           </div>

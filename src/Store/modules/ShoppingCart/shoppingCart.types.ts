@@ -7,6 +7,7 @@ export interface InterfaceItemsCart extends InterfaceListProducts {
 export interface StateShoppingCart {
   totalCart: number;
   itemsCart: InterfaceItemsCart[];
+  itemSelected: InterfaceListProducts;
 }
 
 export interface ActCalculateTotalShoppingCart extends Action {
@@ -16,6 +17,11 @@ export interface ActCalculateTotalShoppingCart extends Action {
 export interface ActAddNewItemCart extends Action {
   type: "[Cart]AddNewItem";
   payload: InterfaceItemsCart;
+}
+
+export interface ActItemSelected extends Action {
+  type: "[Cart]ItemSelected";
+  payload: InterfaceListProducts | null;
 }
 
 export interface ActRemoveItemCart extends Action {
@@ -35,4 +41,5 @@ export type ActionShoppingCart =
   | ActCalculateTotalShoppingCart
   | ActAddNewItemCart
   | ActRemoveItemCart
-  | ActAlterQuantity;
+  | ActAlterQuantity
+  | ActItemSelected;

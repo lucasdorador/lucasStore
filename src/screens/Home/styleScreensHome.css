@@ -12,3 +12,17 @@
 
   margin: 1rem;
 }
+
+.m-containerHomeFooter {
+  display: none;
+}
+
+@media (max-width: 53.125em) {
+  .m-containerHomeFooter {
+    display: flex;
+
+    position: -webkit-sticky;
+    position: sticky;
+    bottom: 0;
+  }
+}

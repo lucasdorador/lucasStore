@@ -7,6 +7,14 @@ import {
 export const initialState: StateShoppingCart = {
   totalCart: 0,
   itemsCart: [],
+  itemSelected: {
+    createdAt: "",
+    id: "",
+    image: "",
+    name: "",
+    price: "",
+    stock: 0,
+  },
 };
 
 const calculateTotalCart = (itemCart: InterfaceItemsCart[]) => {
@@ -79,6 +87,14 @@ const shoppingCart = (state = initialState, action: ActionShoppingCart) => {
         ...state,
         totalCart: calculateTotalCart(_itemsCart),
         itemsCart: _itemsCart,
+      };
+    }
+    case "[Cart]ItemSelected": {
+      return {
+        ...state,
+        itemSelected: action.payload
+          ? action.payload
+          : initialState.itemSelected,
       };
     }
     default:

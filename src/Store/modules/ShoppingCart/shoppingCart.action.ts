@@ -1,9 +1,11 @@
+import { InterfaceListProducts } from "../../../screens/Home/ListProducts/homeListProducts.types";
 import {
   ActCalculateTotalShoppingCart,
   ActAddNewItemCart,
   ActRemoveItemCart,
   InterfaceItemsCart,
   ActAlterQuantity,
+  ActItemSelected,
 } from "./shoppingCart.types";
 
 export const calculateTotalCart = (): ActCalculateTotalShoppingCart => ({
@@ -36,5 +38,14 @@ export const AlterQuantityItemCart = (
       id: idItemCart,
       newQuantity: newQuantity,
     },
+  };
+};
+
+export const ItemSelected = (
+  Item: InterfaceListProducts | null
+): ActItemSelected => {
+  return {
+    type: "[Cart]ItemSelected",
+    payload: Item,
   };
 };

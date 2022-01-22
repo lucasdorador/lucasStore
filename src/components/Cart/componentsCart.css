@@ -5,6 +5,10 @@
   justify-content: center;
 }
 
+.c-containerCart--text {
+  display: none;
+}
+
 .c-containerCart svg {
   margin-right: 1rem;
 }
@@ -17,9 +21,46 @@
   font-weight: 600;
   color: white;
   height: 3.7rem;
-  width: 9.9rem;
+  /* width: 9.9rem; */
+  width: 90%;
   align-items: center;
   justify-content: center;
 
   background: var(--primaryColorDark);
+}
+
+.c-displayValue span {
+  display: none;
+}
+
+@media (max-width: 53.125em) {
+  .c-containerCart {
+    background: var(--secundaryColor);
+    justify-content: space-between;
+    padding: 0 1rem;
+  }
+
+  .c-containerCart svg {
+    display: none;
+  }
+
+  .c-containerCart--text {
+    display: flex;
+    width: 100%;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+  }
+
+  .c-displayValue {
+    border-radius: 0;
+    width: auto;
+    background: transparent;
+  }
+
+  .c-displayValue span {
+    display: flex;
+    font-size: 1.6rem;
+    font-weight: 300;
+  }
 }

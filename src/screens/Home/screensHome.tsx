@@ -3,6 +3,7 @@ import "./styleScreensHome.css";
 
 import Header from "../../components/Header/componentHeader.index";
 import ListProducts from "./ListProducts/homeListProducts.index";
+import Footer from "../../components/Footer/componentFooter.index";
 
 const Home: React.FC = () => {
   return (
@@ -10,6 +11,9 @@ const Home: React.FC = () => {
       <Header />
       <div className="m-gridProducts">
         <ListProducts />
+      </div>
+      <div className="m-containerHomeFooter">
+        <Footer />
       </div>
     </div>
   );

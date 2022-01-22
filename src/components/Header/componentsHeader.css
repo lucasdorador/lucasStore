@@ -12,7 +12,7 @@
   position: relative;
   align-items: center;
   justify-content: center;
-  max-height: 3rem;
+  text-align: center;
   font-size: 1.8rem;
   color: white;
   font-weight: 700;
@@ -20,14 +20,18 @@
 }
 
 .c-containerHeader__headerSecundary {
-  display: flex;
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-columns: 15rem 1fr 20rem 20rem;
+  grid-template-rows: 7.5rem;
+  gap: 0 0.2rem;
+  grid-template-areas: "logo search login cart";
   background-color: var(--primaryColorLight);
-  height: 7rem;
 }
 
 .c-containerHeader__logo {
+  grid-area: logo;
   display: flex;
-  width: 25%;
   justify-content: center;
 }
 
@@ -41,16 +45,16 @@
 }
 
 .c-containerHeader__inputSearch {
+  grid-area: search;
   display: flex;
-  width: 50%;
   align-items: center;
   justify-content: center;
 }
 
 .c-containerHeader__login {
+  grid-area: login;
   display: flex;
   cursor: pointer;
-  width: 12.5%;
   align-items: center;
   justify-content: center;
 }
@@ -61,11 +65,59 @@
   font-size: 1.6rem;
 }
 
-.c-containerHeader__cart {
+.c-containerHeader__cart--desktop {
+  grid-area: cart;
   display: flex;
-  width: 12.5%;
   cursor: pointer;
 
   background: var(--primaryColor);
   filter: grayscale(50%) brightness(110%);
+}
+
+@media (max-width: 53.125em) {
+  .c-containerHeader__headerSecundary {
+    grid-template-columns: 8rem 1fr 15rem;
+    grid-template-rows: 5.5rem;
+    grid-template-areas: "logo search login";
+  }
+
+  .c-containerHeader__login {
+    justify-content: flex-end;
+  }
+
+  .c-containerHeader__logo img {
+    position: relative;
+    width: 5rem;
+    height: 4.5rem;
+    cursor: pointer;
+  }
+
+  .c-containerHeader__cart--desktop {
+    display: none;
+  }
+}
+
+@media (max-width: 27.5em) {
+  .c-containerHeader__headerSecundary {
+    grid-template-columns: 8rem 1fr;
+    grid-template-rows: 5.5rem 3.5rem;
+    grid-template-areas:
+      "logo login"
+      "search search";
+  }
+
+  .c-containerHeader__logo {
+    justify-content: flex-start;
+  }
+
+  .c-containerHeader__login {
+    justify-content: flex-end;
+  }
+
+  .c-containerHeader__logo img {
+    position: relative;
+    width: 5rem;
+    height: 4.5rem;
+    cursor: pointer;
+  }
 }

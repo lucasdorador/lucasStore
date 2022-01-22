@@ -34,3 +34,9 @@
 .m-containerListProducts__buttonText {
   margin-left: 1rem;
 }
+
+@media (max-width: 550px) {
+  .m-containerListProducts__buttonBuy {
+    /* display: none; */
+  }
+}

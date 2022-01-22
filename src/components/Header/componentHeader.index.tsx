@@ -45,7 +45,10 @@ function Header() {
             Entre ou <b>{">"}</b> <p>cadastre-se</p>
           </div>
         </div>
-        <div className="c-containerHeader__cart" onClick={functionGoToCart}>
+        <div
+          className="c-containerHeader__cart--desktop"
+          onClick={functionGoToCart}
+        >
           <Cart />
         </div>
       </div>
