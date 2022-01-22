@@ -58,7 +58,7 @@
   width: 100%;
 }
 
-@media (max-width: 550px) {
+@media (max-width: 34.375em) {
   .m-containerListProducts {
     flex-flow: column wrap;
     justify-content: flex-start;

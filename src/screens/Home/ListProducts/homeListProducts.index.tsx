@@ -22,13 +22,22 @@ const ListProducts: React.FC = () => {
     (state: InterfaceSelectorRedux) => state.shoppingCart.itemsCart
   );
 
+  const functionAddItemCartMobile = useCallback(
+    (prod: InterfaceListProducts) => {
+      if (window.innerWidth < 550) {
+        dispatch(ItemSelected(prod));
+      }
+    },
+    []
+  );
+
   return (
     <div className="m-containerListProducts">
       {products.map((prod: InterfaceListProducts) => (
         <div
           key={prod.id}
           onClick={() => {
-            dispatch(ItemSelected(prod));
+            functionAddItemCartMobile(prod);
           }}
           className="m-containerListProducts__cardProduct"
         >

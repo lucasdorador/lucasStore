@@ -15,6 +15,8 @@ import {
   RemoveItemCart,
 } from "../../Store/modules/ShoppingCart/shoppingCart.action";
 import { useNavigate } from "react-router-dom";
+import { IconCaution } from "../../components/Icons/Caution/IconCaution";
+import { IconCelebration } from "../../components/Icons/Celebration/IconCelebration";
 
 const Cart: React.FC = () => {
   const dispatch = useDispatch();
@@ -57,20 +59,18 @@ const Cart: React.FC = () => {
         {_itemsCart &&
           _itemsCart.length > 0 &&
           _itemsCart.map((item: InterfaceItemsCart, idx: number) => (
-            <div className="m-dataGridItemsCart">
-              <div className="m-dataProducts">
-                <div className="m-ProductsImage">
-                  <LazyLoadImage srcSet={imageNotFound} src={item.image} />
-                </div>
-                <div className="m-ProductsNameObs">
-                  <div className="m-ProductsName">{item.name}</div>
-                  <div className="m-ProductsObs">
-                    <input
-                      type="text"
-                      name="observationProducts"
-                      placeholder="Digite a observação para esse produto."
-                    />
-                  </div>
+            <div key={idx} className="m-dataGridItemsCart">
+              <div className="m-ProductsImage">
+                <LazyLoadImage srcSet={imageNotFound} src={item.image} />
+              </div>
+              <div className="m-ProductsNameObs">
+                <div className="m-ProductsName">{item.name}</div>
+                <div className="m-ProductsObs">
+                  <input
+                    type="text"
+                    name="observationProducts"
+                    placeholder="Digite a observação para esse produto."
+                  />
                 </div>
               </div>
               <div className="m-dataQuantity">
@@ -112,6 +112,7 @@ const Cart: React.FC = () => {
         <div className="m-footer">
           <div className="m-footer--keepBuying">
             <button
+              className="m-footer__ButtonkeepBuying"
               onClick={() => {
                 navigate("/");
               }}
@@ -120,11 +121,13 @@ const Cart: React.FC = () => {
             </button>
             {_totalCart < 350 ? (
               <div className="m-footer--infoShipping">
+                <IconCaution fill={"white"} />
                 Falta apenas R$ {maskValue(350 - _totalCart)} para você
                 conseguir o frete grátis.
               </div>
             ) : (
               <div className="m-footer--ShippingFree">
+                <IconCelebration width="3rem" height="3rem" fill={"white"} />
                 Parabéns você conseguiu frete grátis nessa compra.
               </div>
             )}
