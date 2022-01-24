@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import ButtonBuy from "./ButtonBuy/listProductsButtonBuy.index";
 import "./homeListProducts.css";
@@ -6,7 +6,6 @@ import { InterfaceListProducts } from "./homeListProducts.types";
 import imageNotFound from "../../../assets/imageNotFound.jpg";
 import { useDispatch, useSelector } from "react-redux";
 import { InterfaceSelectorRedux } from "../../../Store/reduxInterface.types";
-import { InterfaceItemsCart } from "../../../Store/modules/ShoppingCart/shoppingCart.types";
 import ModalAddItems from "../../../components/ModalAddItems/componentsModalAddItem.index";
 import { functionValidProductInCart } from "../../../utils/functions";
 import { ItemSelected } from "../../../Store/modules/ShoppingCart/shoppingCart.action";
