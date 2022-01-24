@@ -1,4 +1,4 @@
-import api from "../../../services/api";
+import { InterfaceListProducts } from "../../../screens/Home/ListProducts/homeListProducts.types";
 import { ActionProducts, StateProducts } from "./products.types";
 
 export const initialState: StateProducts = {
@@ -11,6 +11,17 @@ const products = (state = initialState, action: ActionProducts) => {
       return {
         ...state,
         items: action.payload,
+      };
+    }
+    case "[Products]Search": {
+      const _newItems = state.items.filter((el: InterfaceListProducts) => {
+        console.log(el.name.toLowerCase());
+        return el.name.toLowerCase().includes(action.payload.toLowerCase());
+      });
+
+      return {
+        ...state,
+        items: _newItems,
       };
     }
     default: {

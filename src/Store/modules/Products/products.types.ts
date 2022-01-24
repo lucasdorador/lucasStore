@@ -10,4 +10,9 @@ export interface ActGetAllProducts extends Action {
   payload: any;
 }
 
-export type ActionProducts = ActGetAllProducts;
+export interface ActSearchProducts extends Action {
+  type: "[Products]Search";
+  payload: string;
+}
+
+export type ActionProducts = ActGetAllProducts | ActSearchProducts;
