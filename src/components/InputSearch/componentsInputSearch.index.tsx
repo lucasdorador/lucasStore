@@ -4,7 +4,6 @@ import {
   getAllProducts,
   searchProducts,
 } from "../../Store/modules/Products/products.action";
-import { IconSearch } from "../Icons/Search/iconSearch";
 import "./componentsInputSearch.css";
 
 const InputSearch: React.FC = () => {

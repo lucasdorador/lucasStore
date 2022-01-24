@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from "react";
+import React from "react";
 import "./styleScreensHome.css";
 
 import Header from "../../components/Header/componentHeader.index";
