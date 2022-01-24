@@ -20,6 +20,7 @@ import { IconCelebration } from "../../components/Icons/Celebration/IconCelebrat
 
 const Cart: React.FC = () => {
   const dispatch = useDispatch();
+
   const navigate = useNavigate();
   const _itemsCart = useSelector(
     (state: InterfaceSelectorRedux) => state.shoppingCart.itemsCart

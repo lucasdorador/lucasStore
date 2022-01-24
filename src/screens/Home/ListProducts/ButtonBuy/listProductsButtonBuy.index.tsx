@@ -76,6 +76,7 @@ const ButtonBuy: React.FC<InterfaceButtonBuy> = (props) => {
               <div
                 style={{ display: "flex" }}
                 onClick={functionDecrementQuantity}
+                role="decrementIcon"
               >
                 <IconRemove width="3.5rem" height="3.5rem" fill={"white"} />
               </div>
@@ -85,6 +86,7 @@ const ButtonBuy: React.FC<InterfaceButtonBuy> = (props) => {
                 onClick={() => {
                   functionRemoveItemCart();
                 }}
+                role="trashIcon"
               >
                 <IconTrashWithBorder
                   width="3.5rem"

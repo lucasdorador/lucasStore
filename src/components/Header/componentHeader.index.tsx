@@ -48,6 +48,7 @@ function Header() {
         <div
           className="c-containerHeader__cart--desktop"
           onClick={functionGoToCart}
+          data-testid="divCartDesktop"
         >
           <Cart />
         </div>

@@ -58,6 +58,7 @@
   width: 100%;
 }
 
+/* 550px */
 @media (max-width: 34.375em) {
   .m-containerListProducts {
     flex-flow: column wrap;
@@ -91,5 +92,28 @@
 
   .m-containerListProductsButtonBuy {
     display: none;
+  }
+}
+
+@media (max-width: 23.75em) {
+  .m-containerListProducts__image {
+    width: 100%;
+  }
+
+  .m-containerListProducts__image img {
+    width: 100%;
+  }
+
+  .m-containerListProducts__name {
+    font-size: 1.6rem;
+    width: 18rem;
+  }
+
+  .m-containerListProducts__price {
+    font-size: 1.8rem;
+  }
+
+  .m-containerListProducts__price span {
+    font-size: 1rem;
   }
 }

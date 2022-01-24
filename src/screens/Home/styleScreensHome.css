@@ -17,6 +17,7 @@
   display: none;
 }
 
+/*850px*/
 @media (max-width: 53.125em) {
   .m-containerHomeFooter {
     display: flex;

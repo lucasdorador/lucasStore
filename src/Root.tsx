@@ -9,6 +9,7 @@ import { encryptTransform } from "redux-persist-transform-encrypt";
 
 import { PersistGate } from "redux-persist/integration/react";
 import storage from "redux-persist/lib/storage";
+import { InterfaceSelectorRedux } from "./Store/reduxInterface.types";
 
 const persistConfig = {
   key: "Lucas-Store",

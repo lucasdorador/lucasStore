@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback, useEffect } from "react";
 import "./styleScreensHome.css";
 
 import Header from "../../components/Header/componentHeader.index";
@@ -12,6 +12,7 @@ const Home: React.FC = () => {
       <div className="m-gridProducts">
         <ListProducts />
       </div>
+
       <div className="m-containerHomeFooter">
         <Footer />
       </div>

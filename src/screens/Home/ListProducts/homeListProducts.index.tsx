@@ -1,9 +1,8 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import ButtonBuy from "./ButtonBuy/listProductsButtonBuy.index";
 import "./homeListProducts.css";
 import { InterfaceListProducts } from "./homeListProducts.types";
-import { products } from "./mockJson";
 import imageNotFound from "../../../assets/imageNotFound.jpg";
 import { useDispatch, useSelector } from "react-redux";
 import { InterfaceSelectorRedux } from "../../../Store/reduxInterface.types";
@@ -11,6 +10,7 @@ import { InterfaceItemsCart } from "../../../Store/modules/ShoppingCart/shopping
 import ModalAddItems from "../../../components/ModalAddItems/componentsModalAddItem.index";
 import { functionValidProductInCart } from "../../../utils/functions";
 import { ItemSelected } from "../../../Store/modules/ShoppingCart/shoppingCart.action";
+import { getAllProducts } from "../../../Store/modules/Products/products.action";
 
 const ListProducts: React.FC = () => {
   const dispatch = useDispatch();
@@ -22,6 +22,10 @@ const ListProducts: React.FC = () => {
     (state: InterfaceSelectorRedux) => state.shoppingCart.itemsCart
   );
 
+  const products = useSelector(
+    (state: InterfaceSelectorRedux) => state.products.items
+  );
+
   const functionAddItemCartMobile = useCallback(
     (prod: InterfaceListProducts) => {
       if (window.innerWidth < 550) {
@@ -30,6 +34,10 @@ const ListProducts: React.FC = () => {
     },
     []
   );
+
+  useEffect(() => {
+    dispatch(getAllProducts());
+  }, []);
 
   return (
     <div className="m-containerListProducts">
